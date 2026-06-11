@@ -8,18 +8,19 @@
   <link rel="canonical" href="https://resmonto.com" />
   <style>
     :root {
-      --bg: #0b0e17;
-      --bg-2: #0f1322;
-      --card: #151a2d;
-      --text: #e9ecf5;
-      --muted: #9aa3b8;
-      --accent: #4cc9f0;
-      --accent-2: #74eeff;
-      --ok: #2ecc71;
-      --warn: #f39c12;
-      --danger: #e74c3c;
-      --border: #242a40;
-      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+      /* Light, professional palette */
+      --bg: #f5f7fb;
+      --bg-2: #ffffff;
+      --card: #ffffff;
+      --text: #1b2533;
+      --muted: #6f7b8b;
+      --accent: #2563eb;      /* primary blue */
+      --accent-2: #1d4ed8;    /* darker blue */
+      --ok: #16a34a;
+      --warn: #f97316;
+      --danger: #dc2626;
+      --border: #dde2ec;
+      --shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
     }
 
     * { box-sizing: border-box; }
@@ -83,24 +84,25 @@
     .btn {
       appearance: none;
       border: 1px solid var(--border);
-      background: #101424;
-      color: var(--text);
+      background: #e5edff;
+      color: var(--accent-2);
       padding: 10px 16px;
       border-radius: 10px;
       font-size: 14px;
       cursor: pointer;
-      transition: border-color 0.2s, background 0.2s;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+      font-weight: 500;
     }
 
     .btn:hover {
       border-color: var(--accent);
-      background: #121628;
+      background: #dbeafe;
     }
 
     .btn-primary {
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
       border: none;
-      color: #0b0e17;
+      color: #ffffff;
       font-weight: 600;
     }
 
@@ -113,18 +115,19 @@
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
       gap: 30px;
-      padding: 50px 0 30px;
+      padding: 40px 0 30px;
     }
 
     .hero-content h1 {
-      font-size: 38px;
+      font-size: 34px;
       margin: 0 0 12px;
-      line-height: 1.1;
+      line-height: 1.15;
       font-weight: 800;
+      color: #0f172a;
     }
 
     .hero-content .tagline {
-      font-size: 14px;
+      font-size: 13px;
       color: var(--accent);
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -133,7 +136,7 @@
     }
 
     .hero-content p {
-      font-size: 16px;
+      font-size: 15px;
       color: var(--muted);
       margin: 0 0 20px;
     }
@@ -141,6 +144,7 @@
     .hero-actions {
       display: flex;
       gap: 12px;
+      flex-wrap: wrap;
     }
 
     .hero-visual {
@@ -149,7 +153,7 @@
       border-radius: 14px;
       padding: 14px;
       box-shadow: var(--shadow);
-      min-height: 260px;
+      min-height: 240px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -164,12 +168,12 @@
       background:
         radial-gradient(
           60% 60% at 20% 30%,
-          rgba(76, 201, 240, 0.15),
+          rgba(37, 99, 235, 0.12),
           transparent
         ),
         radial-gradient(
           50% 50% at 80% 20%,
-          rgba(116, 238, 255, 0.1),
+          rgba(15, 23, 42, 0.05),
           transparent
         );
       filter: blur(20px);
@@ -178,8 +182,8 @@
     .placeholder-box {
       width: 90%;
       height: 180px;
-      background: linear-gradient(180deg, #1a2035, #121526);
-      border: 1px solid var(--border);
+      background: linear-gradient(180deg, #eff3ff, #dbeafe);
+      border: 1px solid #d1d9f0;
       border-radius: 10px;
       display: flex;
       align-items: center;
@@ -188,17 +192,20 @@
       font-size: 14px;
       text-align: center;
       padding: 10px;
+      position: relative;
+      z-index: 1;
     }
 
     /* Features */
     .features {
-      padding: 30px 0 10px;
+      padding: 20px 0 10px;
     }
 
     .features h2 {
-      font-size: 24px;
+      font-size: 22px;
       margin: 0 0 18px;
       font-weight: 700;
+      color: #0f172a;
     }
 
     .feature-grid {
@@ -212,12 +219,14 @@
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 16px;
+      box-shadow: 0 4px 10px rgba(148, 163, 184, 0.08);
     }
 
     .feature-card h3 {
       font-size: 16px;
       margin: 8px 0 6px;
       font-weight: 600;
+      color: #111827;
     }
 
     .feature-card p {
@@ -230,12 +239,12 @@
       width: 36px;
       height: 36px;
       border-radius: 8px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      background: #e0ecff;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 16px;
-      color: #0b0e17;
+      font-size: 14px;
+      color: var(--accent-2);
       font-weight: 700;
     }
 
@@ -245,9 +254,10 @@
     }
 
     .how h2 {
-      font-size: 24px;
+      font-size: 22px;
       margin: 0 0 18px;
       font-weight: 700;
+      color: #0f172a;
     }
 
     .steps {
@@ -275,6 +285,7 @@
       font-size: 16px;
       margin: 0 0 6px;
       font-weight: 600;
+      color: #111827;
     }
 
     .step p {
@@ -283,36 +294,88 @@
       margin: 0;
     }
 
-    /* CTA Section */
-    .cta {
-      padding: 30px 0 10px;
+    /* Pricing */
+    .pricing {
+      padding: 30px 0 20px;
     }
 
-    .cta-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 24px;
-      text-align: center;
-    }
-
-    .cta-card h2 {
+    .pricing h2 {
       font-size: 22px;
       margin: 0 0 8px;
       font-weight: 700;
+      color: #0f172a;
+      text-align: center;
     }
 
-    .cta-card p {
+    .pricing-subtitle {
       font-size: 14px;
       color: var(--muted);
-      margin: 0 0 16px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .pricing-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 16px;
+      text-align: left;
+      box-shadow: 0 4px 10px rgba(148, 163, 184, 0.08);
+    }
+
+    .pricing-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #111827;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 4px;
+    }
+
+    .pricing-price {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 4px 0 2px;
+      color: var(--accent-2);
+    }
+
+    .pricing-period {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .pricing-features {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+
+    .pricing-card .btn-primary {
+      width: 100%;
+      text-align: center;
+      display: inline-block;
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+
+    .pricing-card.highlight {
+      border-color: var(--accent);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15);
     }
 
     /* Footer */
     footer {
-      padding: 30px 0;
+      padding: 24px 0 30px;
       border-top: 1px solid var(--border);
-      margin-top: 30px;
+      margin-top: 20px;
       text-align: center;
       font-size: 13px;
       color: var(--muted);
@@ -327,7 +390,7 @@
         grid-template-columns: 1fr;
       }
       .hero-content h1 {
-        font-size: 28px;
+        font-size: 26px;
       }
     }
   </style>
@@ -343,9 +406,10 @@
       <div class="nav-links">
         <a href="#features">Features</a>
         <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
         <a href="#contact">Contact</a>
       </div>
-      <a href="server-ssl-monitor.html" class="btn btn-primary">Open Dashboard</a>
+      <a href="server-ssl-monitor.html" class="btn btn-primary">Login</a>
     </nav>
 
     <!-- Hero Section -->
@@ -354,17 +418,17 @@
         <div class="tagline">resmonto.com</div>
         <h1>Monitor Server Resources and SSL Certificates in One Place</h1>
         <p>
-          Resmonto is a simple, real-time web dashboard to track CPU, memory, disk usage, and SSL certificate expiry across your servers. No complex setup—just plug in your data and start monitoring.
+          Resmonto is a streamlined web dashboard to track CPU, memory, disk usage, and SSL certificate expiry across your servers. Connect your data source and start monitoring in minutes.
         </p>
         <div class="hero-actions">
-          <a href="server-ssl-monitor.html" class="btn btn-primary">Get Started</a>
-          <a href="#features" class="btn">Learn More</a>
+          <a href="server-ssl-monitor.html" class="btn btn-primary">Login</a>
+          <a href="#pricing" class="btn">View Pricing</a>
         </div>
       </div>
 
       <div class="hero-visual">
         <div class="placeholder-box">
-          Resmonto Dashboard Preview<br>
+          Resmonto Dashboard Preview<br />
           CPU • Memory • Disk • SSL Status
         </div>
       </div>
@@ -377,25 +441,25 @@
         <div class="feature-card">
           <div class="feature-icon">CPU</div>
           <h3>Server Resource Monitoring</h3>
-          <p>Track CPU, memory, and disk usage with live percentages and visual bars.</p>
+          <p>Track CPU, memory, and disk usage with live percentages and clear visual indicators.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon">SSL</div>
           <h3>SSL Certificate Tracker</h3>
-          <p>See expiry dates and days left for each certificate, with clear status indicators.</p>
+          <p>See expiry dates and days left for each certificate, with status colors for quick attention.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon">⚡</div>
-          <h3>Real-Time Updates</h3>
-          <p>Refresh data on demand or automatically to keep your monitoring current.</p>
+          <h3>Near Real-Time Updates</h3>
+          <p>Refresh data on demand or on a schedule to keep your monitoring view up to date.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon">🔒</div>
-          <h3>Simple & Secure</h3>
-          <p>Single-page HTML design with no external dependencies—easy to integrate and secure.</p>
+          <h3>Simple & Lightweight</h3>
+          <p>Single-page design without heavy dependencies, easy to deploy in your existing environment.</p>
         </div>
       </div>
     </section>
@@ -407,29 +471,63 @@
         <div class="step">
           <div class="step-num">Step 1</div>
           <h3>Connect Your Data Source</h3>
-          <p>Point the dashboard to your backend API or server endpoints that provide CPU, memory, disk, and SSL data.</p>
+          <p>Point Resmonto to your backend API or server endpoints that expose CPU, memory, disk, and SSL data.</p>
         </div>
 
         <div class="step">
           <div class="step-num">Step 2</div>
-          <h3>View the Dashboard</h3>
-          <p>Open the single-page dashboard to see real-time metrics and SSL certificate status in one clean view.</p>
+          <h3>Login to the Dashboard</h3>
+          <p>Use the Login button to access your unified dashboard and view all critical metrics at a glance.</p>
         </div>
 
         <div class="step">
           <div class="step-num">Step 3</div>
-          <h3>Monitor & Alert</h3>
-          <p>Use status colors (ok/warn/danger) to quickly spot issues and set up alerts based on thresholds.</p>
+          <h3>Monitor & Take Action</h3>
+          <p>Use status indicators and expiries to decide when to scale resources or renew certificates.</p>
         </div>
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta">
-      <div class="cta-card">
-        <h2>Ready to Monitor Your Servers?</h2>
-        <p>Start using Resmonto today to keep your server resources and SSL certificates under control.</p>
-        <a href="server-ssl-monitor.html" class="btn btn-primary">Open Dashboard Now</a>
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+      <h2>Pricing Plans</h2>
+      <div class="pricing-subtitle">Choose a plan that fits your infrastructure and monitoring needs.</div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-name">Tier 1</div>
+          <div class="pricing-price">Rs. 200</div>
+          <div class="pricing-period">per month</div>
+          <div class="pricing-features">
+            • Monitor up to <strong>25 SSL certificates</strong>.<br />
+            • Track up to <strong>25 servers</strong> for CPU, memory, and disk usage.<br />
+            • Ideal for small setups and basic monitoring needs.
+          </div>
+          <a href="server-ssl-monitor.html" class="btn-primary btn">Login</a>
+        </div>
+
+        <div class="pricing-card highlight">
+          <div class="pricing-name">Tier 2</div>
+          <div class="pricing-price">Rs. 500</div>
+          <div class="pricing-period">per month</div>
+          <div class="pricing-features">
+            • Monitor up to <strong>100 SSL certificates</strong>.<br />
+            • Track up to <strong>100 servers</strong> with detailed resource metrics.<br />
+            • Recommended for growing teams and multiple environments.
+          </div>
+          <a href="server-ssl-monitor.html" class="btn-primary btn">Login</a>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-name">Tier 3</div>
+          <div class="pricing-price">Rs. 900</div>
+          <div class="pricing-period">per month</div>
+          <div class="pricing-features">
+            • Monitor up to <strong>200 SSL certificates</strong>.<br />
+            • Track up to <strong>200 servers</strong> across your infrastructure.<br />
+            • Includes <strong>advanced server event alerts</strong> for proactive issue detection.
+          </div>
+          <a href="server-ssl-monitor.html" class="btn-primary btn">Login</a>
+        </div>
       </div>
     </section>
 
